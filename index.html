@@ -12,16 +12,21 @@
 <body>
 
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Shivakant Mishra</div>
-    <ul class="nav-links">
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#contact">Reach Out</a></li>
-    </ul>
-  </nav>
+ <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">Shivakant Mishra</div>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact">Reach Out</a></li>
+  </ul>
+</nav>
 
 <!-- Hero Section -->
 <section class="hero" id="home">
@@ -323,6 +328,13 @@ function type() {
 }
 
 type();
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+ 
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
 
   
   </script>
