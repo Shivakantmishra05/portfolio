@@ -1,4 +1,4 @@
-/* Reset and base styling */
+/* === Reset and base styling === */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,10 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to right, #f9f9f9, #f0f0f0);
   color: #222;
+  overflow-x: hidden;
 }
+
+/* === Fade-in Animation === */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -22,7 +25,8 @@ body {
     transform: translateY(0);
   }
 }
-/* Navbar */
+
+/* === Navbar Styling === */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -43,6 +47,7 @@ body {
   text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
 }
 
+/* Nav links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -58,6 +63,51 @@ body {
 
 .nav-links li a:hover {
   color: #0077ff;
+}
+
+/* === Hamburger Menu === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* === Responsive Nav === */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
 }
 
 
